@@ -1,0 +1,59 @@
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="addGoalForm">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Amount Diposited</mat-label>
+                    <input type="number" formControlName="amountDiposited" matInput placeholder="Amount Diposited">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Interest Earned</mat-label>
+                    <input type="number" formControlName="interestEarned" matInput placeholder="Interest Earned">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Total Deposit</mat-label>
+                    <input type="number" formControlName="totalDeposit" matInput placeholder="Total Deposit">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Total Interest</mat-label>
+                    <input type="number" formControlName="totalInterest" matInput placeholder="Total Interest">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Month End Balance</mat-label>
+                    <input type="number" formControlName="monthEndBalance" matInput placeholder="Month End Balance">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Month</mat-label>
+                    <mat-select formControlName="month">
+                        <mat-option *ngFor="let month of months" [value]="month">
+                            {{month}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Year
+                    </mat-label>
+                    <mat-select formControlName="year">
+                        <mat-option *ngFor="let year of years" [value]="year">{{year}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <button (click)="submit()" mat-raised-button color="accent">Submit</button>
+    </form>
+</div>
